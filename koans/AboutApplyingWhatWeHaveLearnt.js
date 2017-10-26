@@ -32,16 +32,21 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
       var productsICanEat = [];
+      return products.filter(function(product){
+        return product.containsNuts === false
+      }).all(function(product){
+        return !"mushrooms";
+      })
 
       /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
